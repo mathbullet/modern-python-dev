@@ -11,5 +11,15 @@ dependencies = [
 [dependency-groups]
 dev = [
     "mypy>=1.18.2",
+    "poethepoet>=0.37.0",
+    "pre-commit>=4.4.0",
     "ruff>=0.14.6",
 ]
+
+
+[tool.poe.tasks]
+format = "uv run ruff format ."
+lint = "uv run ruff check --fix ."
+type-check = "uv run mypy ."
+
+check = ["format", "lint", "type-check"]
