@@ -1,4 +1,3 @@
-# sample.py
 import sys
 import os
 
